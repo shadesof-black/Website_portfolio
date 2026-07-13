@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Rahul Raj | Portfolio Website
 
-## Getting Started
+A modern, responsive, and interactive portfolio website showcasing my journey as an AI Engineer, Machine Learning Enthusiast, and Robotics Developer. The portfolio highlights my projects, achievements, technical skills, certifications, and professional experience through a premium UI with smooth animations and modern web technologies.
 
-First, run the development server:
+> Designed to provide recruiters, collaborators, and developers with a complete overview of my work and technical expertise.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Live Website
+
+🔗 **Portfolio:** https://website-portfolio-bice-tau.vercel.app/
+
+---
+
+## 📌 Features
+
+- 🎨 Modern and responsive UI/UX
+- 🌙 Dark & Light theme support
+- ⚡ Smooth page transitions and animations
+- 🤖 Interactive 3D Hero Section
+- 📱 Fully responsive across all devices
+- 🏆 Awards & Achievements Timeline
+- 💼 Experience & Journey Section
+- 🚀 Featured Projects Showcase
+- 🛠 Tech Stack Display
+- 📄 Resume Download
+- 📬 Contact Form
+- 🔗 GitHub & LinkedIn Integration
+- ✨ Optimized for Performance and SEO
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+### UI & Animations
+
+- Framer Motion
+- Three.js
+- React Three Fiber
+- GSAP
+- Lucide React
+
+### Development Tools
+
+- Git
+- GitHub
+- Vercel
+- ESLint
+- PostCSS
+
+---
+
+## 📂 Project Structure
+
+```text
+portfolio/
+│
+├── public/
+│   ├── images/
+│   ├── models/
+│   └── icons/
+│
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── sections/
+│   ├── hooks/
+│   ├── lib/
+│   ├── data/
+│   └── styles/
+│
+├── package.json
+├── next.config.ts
+├── tailwind.config.ts
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💼 Featured Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🎓 PUAI – University AI Assistant (RAG)
+- 🎬 Movie Recommendation System
+- 💎 Diamond Price Prediction (MLOps)
+- 🤖 Autonomous Line Following Robot
+- 🦾 Gesture-Controlled Prosthetic Arm
+- 🌾 Wheat Crop Disease Detection
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🏆 Achievements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🥇 1st Position – IIT Mandi Line Following Competition
+- 🥈 2nd Position – NIT Kurukshetra Line Following Competition
+- 🥈 Runner-up – ACIC RISE Ideathon (Gesture-Controlled Prosthetic Arm)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📈 Performance
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Responsive Design
+- Optimized Assets
+- SEO Friendly
+- Lazy Loaded Images
+- Smooth Animations
+- Fast Page Load
+- Production Ready
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📬 Contact
+
+**Rahul Raj**
+
+📧 Email: rahulraj11635@gmail.com
+
+🔗 LinkedIn: https://linkedin.com/in/26-11-rahul-raj
+
+💻 GitHub: https://github.com/shadesof-black
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ by Rahul Raj
