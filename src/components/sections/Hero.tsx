@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Send, ChevronDown, Sparkles } from 'lucide-react';
 import GlassButton from '@/components/ui/GlassButton';
@@ -12,19 +13,38 @@ const SplineSceneBasic = dynamic(() => import('@/components/ui/demo'), {
 });
 
 export default function Hero() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
+
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      window.dispatchEvent(new CustomEvent('app-loaded'));
+    }
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
 
 
       {/* Right side absolute showcase - full height and width of the right half */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, filter: 'blur(20px)' }}
-        animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-        className="absolute inset-0 w-full h-full z-0 hidden lg:block pointer-events-auto"
-      >
-        <SplineSceneBasic />
-      </motion.div>
+      {isDesktop && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, filter: 'blur(20px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+          className="absolute inset-0 w-full h-full z-0 hidden lg:block pointer-events-auto"
+        >
+          <SplineSceneBasic />
+        </motion.div>
+      )}
 
       <div className="max-w-[90rem] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center pt-24 pb-20 relative z-10 pointer-events-none">
         {/* Left side - Content */}
@@ -76,14 +96,16 @@ export default function Hero() {
           </motion.div>
 
           {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-base text-text-secondary max-w-md mb-10 leading-relaxed"
-          >
-            {personalInfo.tagline}
-          </motion.p>
+          {personalInfo.tagline && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="text-base text-text-secondary max-w-md mb-10 leading-relaxed"
+            >
+              {personalInfo.tagline}
+            </motion.p>
+          )}
 
           {/* CTA Buttons */}
           <motion.div

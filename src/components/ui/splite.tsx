@@ -134,6 +134,9 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
           <Spline
             scene={scene}
             className={className}
+            onLoad={() => {
+              window.dispatchEvent(new CustomEvent('app-loaded'));
+            }}
           />
         </div>
       </Suspense>

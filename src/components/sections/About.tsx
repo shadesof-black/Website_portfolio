@@ -83,13 +83,13 @@ export default function About() {
           <SectionReveal className="lg:col-span-3 h-full" delay={0.1}>
             <GlassCard variant="blue" className="p-8 sm:p-10 h-full flex flex-col justify-between">
               
-              {/* Row 1: Who I Am */}
+              {/* Row 1: About */}
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <div className="p-2 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 rounded-xl">
                     <User size={20} />
                   </div>
-                  <h3 className="text-lg font-bold text-text-primary">Who I Am</h3>
+                  <h3 className="text-lg font-bold text-text-primary">About</h3>
                 </div>
                 <p className="text-text-secondary leading-relaxed text-sm sm:text-[15px] font-normal">
                   I'm a multidisciplinary engineer passionate about building intelligent systems
@@ -105,13 +105,13 @@ export default function About() {
               {/* Divider 1 */}
               <div className="my-6 border-t border-zinc-200/50 dark:border-zinc-800/50" />
 
-              {/* Row 2: What I Do */}
+              {/* Row 2: Expertise */}
               <div>
                 <div className="flex items-center gap-3 mb-5">
                   <div className="p-2 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 rounded-xl">
                     <Code2 size={20} />
                   </div>
-                  <h3 className="text-lg font-bold text-text-primary">What I Do</h3>
+                  <h3 className="text-lg font-bold text-text-primary">Expertise</h3>
                 </div>
                 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -273,7 +273,7 @@ export default function About() {
               <span className="font-semibold text-zinc-400 uppercase tracking-wider text-[10px] sm:text-xs">Education</span>
             </div>
             <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">|</span>
-            <span className="font-medium text-text-primary">B.Tech in Mechanical Engineering</span>
+            <span className="font-medium text-text-primary">B.Tech</span>
             <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">|</span>
             <span className="text-text-secondary">UIET, Panjab University</span>
             <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">|</span>

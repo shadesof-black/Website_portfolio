@@ -20,8 +20,8 @@ interface TimelineItem {
 const defaultTimelineData: TimelineItem[] = [
   {
     id: 1,
-    title: 'B.Tech Mechanical Engineering',
-    shortTitle: 'Mechanical B.Tech',
+    title: 'B.Tech',
+    shortTitle: 'B.Tech',
     date: '2023 - 2027',
     content: 'Pursuing degree at UIET, Panjab University, laying the groundwork for engineering physical and digital mechanics.',
     category: 'Education',

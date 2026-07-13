@@ -3,7 +3,7 @@
 // ─── Personal Info ──────────────────────────
 export const personalInfo = {
   name: 'Rahul Raj',
-  tagline: 'Engineering Intelligent Cyber-Physical Systems',
+  tagline: '',
   subtitles: [
     '👋 Welcome to My Portfolio',
     '✨ Building the Future',
@@ -16,8 +16,8 @@ export const personalInfo = {
 
 From autonomous robots to real-time embedded logic, I bring complexity to life through clean software, clean layouts, and rigorous system-level engineering. I believe in engineering machines that are not just automated, but truly intelligent.`,
   education: {
-    degree: 'B.Tech in Mechanical Engineering',
-    university: 'National Institute of Technology',
+    degree: 'B.Tech',
+    university: 'UIET, Panjab University',
     year: '2023 - 2027',
     gpa: '8.5 / 10',
   },

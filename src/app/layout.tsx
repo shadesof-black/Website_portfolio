@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import AmbientGlow from '@/components/effects/AmbientGlow';
 import CursorGlow from '@/components/effects/CursorGlow';
+import GlobalLoader from '@/components/ui/GlobalLoader';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -118,6 +119,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} font-[var(--font-body)] antialiased`}
       >
+        <GlobalLoader />
         <AmbientGlow />
         <CursorGlow />
         <Navbar />
