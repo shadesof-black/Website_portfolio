@@ -1,26 +1,526 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── CSS Theme Custom Properties ───────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --background-secondary: #F8FAFC;
+  --surface: #FFFFFF;
+  --glass: #FFFFFF;
+  --glass-hover: #F1F5F9;
+  --border: #E2E8F0;
+
+  --text-primary: #000000;
+  --text-secondary: #333333;
+
+  --accent-blue: #0088FF;
+  --accent-ice: #E0F2FE;
+  --accent-cyan: #BAE6FD;
+  --accent-amber: #F59E0B;
+  --accent-white: #FFFFFF;
 }
 
-@theme inline {
+.dark {
+  --background: #050505;
+  --background-secondary: #0A0A0A;
+  --surface: #0A0A0A;
+  --glass: #0A0A0A;
+  --glass-hover: #121212;
+  --border: #27272A;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.70);
+
+  --accent-blue: #38BDF8;
+  --accent-ice: #0C4A6E;
+  --accent-cyan: #075985;
+  --accent-amber: #F59E0B;
+  --accent-white: #0A0A0A;
+}
+
+/* Custom 3D Robot colorizer filter to #4FC3FF */
+.filter-robot-blue {
+  filter: invert(78%) sepia(34%) saturate(1243%) hue-rotate(178deg) brightness(103%) contrast(101%);
+}
+
+/* ─── Tailwind v4 Theme Extension ───────── */
+@theme {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background-secondary: var(--background-secondary);
+  --color-surface: var(--surface);
+  --color-glass: var(--glass);
+  --color-glass-hover: var(--glass-hover);
+  --color-border-glass: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-ice: var(--accent-ice);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-white: var(--accent-white);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ═══════════════════════════════════════════
+   CRYSTAL GLASS DESIGN SYSTEM
+   rahul.ai — Futuristic Portfolio
+   ═══════════════════════════════════════════ */
+
+/* ─── Custom scrollbar ──────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 216, 255, 0.15);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 216, 255, 0.25);
+}
+
+/* Hide scrollbar for gallery */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Base ──────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+::selection {
+  background: rgba(168, 216, 255, 0.2);
+  color: inherit;
+}
+
+/* ─── Aurora background animations ──────── */
+@keyframes aurora-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10%, 5%) scale(1.1);
+  }
+  50% {
+    transform: translate(5%, -10%) scale(0.95);
+  }
+  75% {
+    transform: translate(-5%, 8%) scale(1.05);
+  }
+}
+
+@keyframes aurora-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-8%, 12%) scale(1.05);
+  }
+  50% {
+    transform: translate(12%, 5%) scale(1.1);
+  }
+  75% {
+    transform: translate(5%, -8%) scale(0.95);
+  }
+}
+
+@keyframes aurora-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(-15%, 10%) scale(1.08) rotate(2deg);
+  }
+  66% {
+    transform: translate(10%, -15%) scale(0.92) rotate(-2deg);
+  }
+}
+
+@keyframes aurora-4 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    transform: translate(15%, -5%) scale(1.12);
+  }
+  60% {
+    transform: translate(-10%, 15%) scale(0.9);
+  }
+}
+
+@keyframes aurora-5 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(-8%, -10%) scale(1.06);
+  }
+  70% {
+    transform: translate(12%, 8%) scale(0.94);
+  }
+}
+
+/* ─── Float animations ──────────────────── */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(15px, -20px) rotate(3deg);
+  }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-12px, 18px) rotate(-2deg);
+  }
+}
+
+@keyframes float-slower {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(8px, -12px);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(10px, -15px) rotate(1deg);
+  }
+  66% {
+    transform: translate(-8px, 10px) rotate(-1deg);
+  }
+}
+
+/* ─── Spin animations ───────────────────── */
+@keyframes spin-very-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse-slow {
+  from { transform: rotateX(60deg) rotate(0deg); }
+  to { transform: rotateX(60deg) rotate(-360deg); }
+}
+
+/* ─── Shimmer & glow ────────────────────── */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes shimmer-slow {
+  0% { transform: translateX(-200%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* ─── Tailwind utilities ────────────────── */
+@utility animate-aurora-1 {
+  animation: aurora-1 60s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-aurora-2 {
+  animation: aurora-2 55s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-aurora-3 {
+  animation: aurora-3 50s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-aurora-4 {
+  animation: aurora-4 65s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-aurora-5 {
+  animation: aurora-5 58s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-float-slow-reverse {
+  animation: float-slow-reverse 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-float-slower {
+  animation: float-slower 25s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-float-medium {
+  animation: float-medium 15s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-spin-very-slow {
+  animation: spin-very-slow 30s linear infinite;
+  will-change: transform;
+}
+
+@utility animate-spin-reverse-slow {
+  animation: spin-reverse-slow 25s linear infinite;
+  will-change: transform;
+}
+
+@utility animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@utility animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@utility animate-shimmer-slow {
+  animation: shimmer-slow 4s ease-in-out infinite;
+}
+
+/* ─── Shimmer sweep for glass cards ─────── */
+.shimmer-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.06) 55%,
+    transparent 60%
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ─── Focus Indicators (Accessibility) ────── */
+:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ─── Reduced motion ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Crystal Icon Breathing Edge Glow ─── */
+@keyframes crystal-breath {
+  0%, 100% {
+    filter: drop-shadow(0 0 1px #FFFFFF) drop-shadow(0 0 2.5px #59D8FF) drop-shadow(0 0 6px rgba(166,236,255,0.45));
+    box-shadow: 0 0 8px rgba(89,216,255,0.12), inset 0 0 4px rgba(166,236,255,0.08), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  50% {
+    filter: drop-shadow(0 0 1px #FFFFFF) drop-shadow(0 0 3.2px #59D8FF) drop-shadow(0 0 8.5px rgba(166,236,255,0.58));
+    box-shadow: 0 0 13px rgba(89,216,255,0.22), inset 0 0 6px rgba(166,236,255,0.15), inset 0 1px 0 rgba(255,255,255,0.28);
+  }
+}
+
+.crystal-glow-active {
+  animation: crystal-breath 5s ease-in-out infinite;
+}
+
+/* ─── Framer Fusion AI Grid Pattern ─────── */
+.framer-grid {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.02) 1px, transparent 0),
+    linear-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.01) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .framer-grid {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.035) 1px, transparent 0),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* ─── Card Fan Carousel Layout & Styles ─── */
+.fan-layout {
+  height: 22rem;
+}
+@media (min-width: 480px) { .fan-layout { height: 26rem; } }
+@media (min-width: 640px) { .fan-layout { height: 28rem; } }
+@media (min-width: 768px) { .fan-layout { height: 34rem; } }
+@media (min-width: 1024px) { .fan-layout { height: 38rem; } }
+
+.fan-card {
+  position: absolute;
+  left: 50%;
+  margin-left: -9rem;
+  width: 18rem;
+  height: 25rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transform-origin: bottom center;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark .fan-card {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 1023.98px) {
+  .fan-card {
+    margin-left: -6.75rem;
+    width: 13.5rem;
+    height: 18.75rem;
+    border-radius: 16px;
+  }
+}
+@media (max-width: 767.98px) {
+  .fan-card {
+    margin-left: -4.5rem;
+    width: 9rem;
+    height: 12.5rem;
+    border-radius: 12px;
+  }
+}
+@media (max-width: 639.98px) {
+  .fan-card {
+    margin-left: -3.4rem;
+    width: 6.8rem;
+    height: 9.5rem;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 479.98px) {
+  .fan-card {
+    margin-left: -2.5rem;
+    width: 5rem;
+    height: 7rem;
+    border-radius: 8px;
+  }
+}
+
+/* ─── Premium Glassmorphism & Neon Glow System ─── */
+@keyframes breathing-glow {
+  0%, 100% {
+    box-shadow: 
+      inset 0 1px 1px rgba(255, 255, 255, 0.25),
+      inset 0 10px 20px rgba(255, 255, 255, 0.15),
+      0 4px 24px rgba(0, 0, 0, 0.4),
+      0 15px 35px var(--glow-color-base, rgba(57, 255, 106, 0.15));
+    border-color: var(--glow-color-border-base, rgba(57, 255, 106, 0.25));
+  }
+  50% {
+    box-shadow: 
+      inset 0 1px 2px rgba(255, 255, 255, 0.35),
+      inset 0 12px 24px rgba(255, 255, 255, 0.22),
+      0 4px 28px rgba(0, 0, 0, 0.45),
+      0 20px 45px var(--glow-color-active, rgba(57, 255, 106, 0.25));
+    border-color: var(--glow-color-border-active, rgba(57, 255, 106, 0.45));
+  }
+}
+
+@keyframes reflection-move {
+  0% {
+    transform: translate(-30%, -30%) rotate(25deg);
+  }
+  50% {
+    transform: translate(-22%, -22%) rotate(29deg);
+  }
+  100% {
+    transform: translate(-30%, -30%) rotate(25deg);
+  }
+}
+
+.animate-breathing-glow {
+  animation: breathing-glow 5s ease-in-out infinite;
+}
+
+.animate-reflection-move {
+  animation: reflection-move 10s ease-in-out infinite;
+}
+
+.glass-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  mix-blend-mode: overlay;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(57, 255, 106, 0.2);
+  border-bottom-color: #39FF6A;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Suppress Spline watermarks and logo badges globally */
+a[href*="spline.design"],
+a[href*="spline"],
+div[class*="spline-watermark"],
+#spline-logo,
+[style*="spline"],
+a[style*="absolute"] img[src*="spline"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }

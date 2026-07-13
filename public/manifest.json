@@ -1,0 +1,16 @@
+{
+  "name": "Rahul Raj — AI Engineer & Robotics Developer",
+  "short_name": "rahulraj.dev",
+  "description": "Portfolio of Rahul Raj — AI Engineer & Robotics Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#38BDF8",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
