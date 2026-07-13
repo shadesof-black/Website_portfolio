@@ -126,7 +126,7 @@ function MagneticDockButton({
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState('');
   
   const activeRef = useRef(activeSection);
@@ -137,7 +137,7 @@ export default function Navbar() {
   // Load and apply theme
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    const isDark = saved === 'dark';
+    const isDark = saved === null ? true : saved === 'dark';
     setDarkMode(isDark);
     document.documentElement.classList.toggle('dark', isDark);
   }, []);
